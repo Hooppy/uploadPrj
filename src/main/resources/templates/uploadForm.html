@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+	$(function(){
+		$('#wrtBtn').click(function(e){
+			var form = $('#write-form');
+			
+			form.attr('action', '/upload');
+			form.submit();
+		});
+	});
+</script>
+
+<body>
+	<form method="POST" id="write-form" enctype="multipart/form-data">
+		
+		<div>
+			<input class="form-control" type="file" name="file1" id="file1">
+			<input class="form-control" type="file" name="file2" id="file2" multiple>
+			<button type="submit" class="btn btn-primary" id="wrtBtn">등록</button>
+		</div>
+			
+	</form>
+</body>
